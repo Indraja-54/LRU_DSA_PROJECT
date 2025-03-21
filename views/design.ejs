@@ -1,0 +1,38 @@
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">📦 LRU Cache Current State</h1>
+    <% if (foundKey && foundValue !== undefined && foundValue !== null) { %>
+        <div class="alert alert-success text-center">
+           Recently accessed: <strong><%= foundKey %> : <%= foundValue %></strong>
+        </div>
+     <% } else if (foundKey && foundValue === null) { %>
+        <div class="alert alert-danger text-center">
+           Key "<strong><%= foundKey %></strong>" not found in cache!
+        </div>
+     <% } %>
+    <% if (cache.length === 0) { %>
+        <p class="text-center text-muted">Your LRU cache is empty.</p>
+    <% } else { %>
+        <div class="row">
+            <% cache.forEach(([key, value], index) => { %>
+                <div class="col-md-3 mb-4">
+                    <div class="card shadow-sm <% if (index === 0) { %> border-success <% } %>">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-dark"><%= key %></h5>
+                            <p class="card-text text-dark"><%= value %></p>
+                            <% if (index === 0) { %>
+                                <span class="badge bg-success">Most Recent</span>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+
+    <div class="text-center mt-4">
+            <a href="/lru-cache" class="btn btn-primary me-2">Set New Capacity</a>
+            <a href="/lru-cache/capacity?capacity=<%= capacity %>" class="btn btn-outline-secondary">Back to Home</a>
+    </div>        
+</div>
+

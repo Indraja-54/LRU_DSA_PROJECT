@@ -1,0 +1,40 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main.flex-fill {
+    flex: 1;
+}
+
+footer {
+    background-color: #212529;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto; 
+}
+.cache-item {
+    background-color: #f0f0f0; 
+    color: #333; 
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.cache-item.highlight {
+    background-color: #d1e7dd; 
+    color: #000;
+}
+.card-title, .card-text {
+    color: black !important;
+}
