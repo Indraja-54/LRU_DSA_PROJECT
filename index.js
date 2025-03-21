@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(expressLayouts);
 app.set("layout", "layouts/boilerplate");
 
-const port = 8080;
+const port =process.env.PORT || 3000;
 
 app.listen(port, () => {
     console.log("Server running on port", port);
