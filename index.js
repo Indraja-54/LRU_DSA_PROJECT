@@ -15,7 +15,7 @@ app.set("layout", "layouts/boilerplate");
 
 const port =process.env.PORT || 3000;
 app.get("/", (req, res) => {
-    res.send("LRU Cache Visualizer running!");
+    res.render("cache_capacity");
   });
 
 app.listen(port, () => {
